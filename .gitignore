@@ -1,0 +1,9 @@
+__pycache__/
+.venv/
+db.sqlite3
+mydatabase
+*.pyc
+__pycache__/
+.vscode
+files/arquivos_teste/
+.idea/
