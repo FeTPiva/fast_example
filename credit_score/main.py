@@ -1,9 +1,10 @@
-# uvicorn main:app --reload
+
 # http://127.0.0.1:8000/docs
 #uvicorn credit_score.main:app --reload
 
 import json
 from fastapi import FastAPI, Depends, Body
+from fastapi import responses
 
 from fastapi.responses import JSONResponse
 from credit_score.apps.entities.user_entity_schema import ResponseScore, UserEntitySchemaPydantic
@@ -18,5 +19,8 @@ app = FastAPI(title="Credit Score API",
 async def retorna_score(score_data: UserEntitySchemaPydantic):
     
     #faz qqlr coisa
-    
-    return {'hello':'world'}
+    response_api = ResponseScore()
+    response_api.categoria = 'Hello'
+    response_api.score = 8000.1
+
+    return response_api
