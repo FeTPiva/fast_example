@@ -17,19 +17,6 @@ class ResponseScore(BaseModel):
     score: float  = Query(None, description="Valor de Score do algoritmo",example = 850.15)
     categoria: str = Query(None, description="Categoria: Aprovado, Negado, Cinza",example ="Aprovado")
 
-class UserSchema(BaseModel):
-    fullname: str = "mesa de crédito"
-    user: str = "mesa_credito"
-    password: str = "sdjf!$67f"
-
-    class Config:
-        schema_extra = {
-            "example": {
-                "fullname": "mesa de crédito",
-                "user": "mesa_credito",
-                "password": "sdjf!$67f"
-            }
-        }
 
 class UserLoginSchema(BaseModel):
     user: str = Field(...)
